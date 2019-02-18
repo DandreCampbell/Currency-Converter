@@ -1,6 +1,6 @@
 /**
  * Made by D'Andre Campbell
- */ 
+ */
 
 public class Currency
 {
@@ -9,89 +9,94 @@ public class Currency
   private double pesos; // Holds conversion of US to Mexican currensy
   private double yen;   // Holds conversion of US to Japanese currensy
   private double yuan;  // Holds conversion of US to Chinese currensy
-  
+  private double franc; // Holds conversion of US to Swiss Franc
   /**
    * Converts US dollar to Jamaican dollar
-   */ 
-  public void UStoJam(double money)
-  {
-    money = jam;
-    jam *= 126.82;
+   */
+  public void UStoJam(double money) {
+    money *= 126.82;
+    jam = money;
   }
-  
+
   /**
    * Returns value of jam
-   */ 
-  public double getJam()
-  {
+   */
+  public double getJam()  {
     return jam;
   }
-  
+
   /**
    * Converts US dollar to European dollar
-   */ 
-  public void UStoEuro(double money)
-  {
-    money = euros;
-    euros *= .9;
+   */
+  public void UStoEuro(double money)  {
+    money *= .9;
+    euros = money;
   }
-  
+
   /**
    * Returns value of euros
-   */ 
-  public double getEuros()
-  {
+   */
+  public double getEuros()  {
     return euros;
   }
-  
+
   /**
    * Converts US dollar to Japanese dollar
-   */ 
-  public void UStoJapan(double money)
-  {
-    money = yen;
-    yen *= 101.57;
+   */
+  public void UStoJapan(double money) {
+    money *= 101.57;
+    yen = money;
   }
-  
+
   /**
    * Returns value of yen
-   */ 
-  public double getYen()
-  {
+   */
+  public double getYen()  {
     return yen;
   }
-  
+
   /**
    * Converts US dollar to Chinese dollar
-   */ 
-  public void UStoChina(double money)
-  {
-    money = yuan;
-    yuan *= 6.68;
+   */
+  public void UStoChina(double money) {
+    money *= 6.68;
+    yuan = money;
   }
-  
+
   /**
    * Returns value of yuan
-   */ 
-  public double getYuan()
-  {
+   */
+  public double getYuan() {
     return yuan;
   }
-  
+
   /**
    * Converts US dollar to Mexican dollar
-   */ 
-  public void UStoMexico(double money)
-  {
-    money = pesos;
-    pesos *= 18.74;
+   */
+  public void UStoMexico(double money)  {
+    money *= 18.74;
+    pesos = money;
   }
-  
+
   /**
    * Returns value of pesos
-   */ 
-  public double getPesos()
-  {
+   */
+  public double getPesos()  {
     return pesos;
+  }
+
+  /**
+   * Converts US dollar to Swiss Franc
+   */
+  public void UStoSwiss(double money) {
+    money *=  1;
+    franc = money;
+  }
+
+  /**
+   * Returns value of franc
+   */
+  public double getFranc() {
+    return franc;
   }
 }
