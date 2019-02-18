@@ -2,7 +2,6 @@
  * Made by D'Andre Campbell
  */
 import javax.swing.*;
-import java.text.DecimalFormat;
 
 public class CurrencyConverter
 {
@@ -11,7 +10,6 @@ public class CurrencyConverter
     String input;
     String con1, con2, con3, con4, con5, con6;
     double num1, num2, num3, num4, num5, num6;
-    DecimalFormat df = new DecimalFormat(".##");
 
     String[] choices = {"US to Jamaican Dollars", "US to Euros", "US to Pesos",
       "US to Yen", "US to Yuan", "US to Swiss Franc"};
