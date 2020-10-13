@@ -3,9 +3,16 @@
  */
 import javax.swing.*;
 
-public class CurrencyConverter
+public class newConverter
 {
-  public static void main(String[] args)  {
+  private double jam;   // Holds conversion of US to Jamaican currensy
+  private double euros; // Holds conversion of US to European currensy
+  private double pesos; // Holds conversion of US to Mexican currensy
+  private double yen;   // Holds conversion of US to Japanese currensy
+  private double yuan;  // Holds conversion of US to Chinese currensy
+  private double franc; // Holds conversion of US to Swiss Franc
+
+  public newConverter() {
     Currency conversion = new Currency();
     String input;
     String con1, con2, con3, con4, con5, con6;
@@ -23,51 +30,150 @@ public class CurrencyConverter
     if(input == choices[0]) {
       con1 = JOptionPane.showInputDialog(null, "Enter amount you would like to convert");
       num1 = Double.parseDouble(con1);
-      conversion.UStoJam(num1);
-      JOptionPane.showMessageDialog(null, String.format("%.2f", conversion.getJam()), "U.S. to Jamaica", JOptionPane.PLAIN_MESSAGE);
-      //JOptionPane.showMessageDialog(null, conversion.getJam());
+      UStoJam(num1);
+      JOptionPane.showMessageDialog(null, String.format("%.2f", getJam()), "U.S. to Jamaica",
+                                                JOptionPane.PLAIN_MESSAGE);
     }
 
     // Runs if US to Euros is chosen
-    else if(input == choices[1])  {
+    else if(input == choices[1]) {
       con2 = JOptionPane.showInputDialog(null, "Enter amount you would like to convert");
       num2 = Double.parseDouble(con2);
-      conversion.UStoEuro(num2);
-      JOptionPane.showMessageDialog(null, String.format("%.2f", conversion.getEuros()), "U.S. to Euros", JOptionPane.PLAIN_MESSAGE);
+      UStoEuro(num2);
+      JOptionPane.showMessageDialog(null, String.format("%.2f", getEuros()), "U.S. to Euros",
+                                                JOptionPane.PLAIN_MESSAGE);
     }
 
     // Runs if US to Pesos is chosen
-    else if(input == choices[2])  {
+    else if(input == choices[2]) {
       con3 = JOptionPane.showInputDialog(null, "Enter amount you would like to convert");
       num3 = Double.parseDouble(con3);
-      conversion.UStoMexico(num3);
-      JOptionPane.showMessageDialog(null, String.format("%.2f", conversion.getPesos()), "U.S. to Pesos", JOptionPane.PLAIN_MESSAGE);
+      UStoMexico(num3);
+      JOptionPane.showMessageDialog(null, String.format("%.2f", getPesos()), "U.S. to Pesos",
+                                                JOptionPane.PLAIN_MESSAGE);
     }
 
     // Runs if US to Japan is chosen
-    else if(input == choices[3])  {
+    else if(input == choices[3]) {
       con4 = JOptionPane.showInputDialog(null, "Enter amount you would like to convert");
       num4 = Double.parseDouble(con4);
-      conversion.UStoJapan(num4);
-      JOptionPane.showMessageDialog(null, String.format("%.2f", conversion.getYen()), "U.S. to Japanese Yen", JOptionPane.PLAIN_MESSAGE);
+      UStoJapan(num4);
+      JOptionPane.showMessageDialog(null, String.format("%.2f", getYen()), "U.S. to Japanese Yen",
+                                                JOptionPane.PLAIN_MESSAGE);
     }
 
     // Runs if US to China is chosen
-    else if(input == choices[4])  {
+    else if(input == choices[4]) {
       con5 = JOptionPane.showInputDialog(null, "Enter amount you would like to convert");
       num5 = Double.parseDouble(con5);
-      conversion.UStoChina(num5);
-      JOptionPane.showMessageDialog(null, String.format("%.2f", conversion.getYuan()), "U.S. to Chinese Yuan", JOptionPane.PLAIN_MESSAGE);
+      UStoChina(num5);
+      JOptionPane.showMessageDialog(null, String.format("%.2f", getYuan()), "U.S. to Chinese Yuan",
+                                                JOptionPane.PLAIN_MESSAGE);
     }
 
     // Runs if US to Swiss is chosen
-    else if(input == choices[5])  {
+    else if(input == choices[5]) {
       con6 = JOptionPane.showInputDialog(null, "Enter amount you would like to convert");
       num6 = Double.parseDouble(con6);
-      conversion.UStoSwiss(num6);
-      JOptionPane.showMessageDialog(null, String.format("%.2f", conversion.getFranc()), "U.S. to Swiss Franc", JOptionPane.PLAIN_MESSAGE);
+      UStoSwiss(num6);
+      JOptionPane.showMessageDialog(null, String.format("%.2f", getFranc()), "U.S. to Swiss Franc",
+                                                JOptionPane.PLAIN_MESSAGE);
     }
 
     System.exit(0);
+  }
+
+  /**
+   * Converts US dollar to Jamaican dollar
+   */
+  public void UStoJam(double money) {
+    money *= 126.82;
+    jam = money;
+  }
+
+  /**
+   * Returns value of jam
+   */
+  public double getJam()  {
+    return jam;
+  }
+
+  /**
+   * Converts US dollar to European dollar
+   */
+  public void UStoEuro(double money)  {
+    money *= .9;
+    euros = money;
+  }
+
+  /**
+   * Returns value of euros
+   */
+  public double getEuros()  {
+    return euros;
+  }
+
+  /**
+   * Converts US dollar to Japanese dollar
+   */
+  public void UStoJapan(double money) {
+    money *= 101.57;
+    yen = money;
+  }
+
+  /**
+   * Returns value of yen
+   */
+  public double getYen()  {
+    return yen;
+  }
+
+  /**
+   * Converts US dollar to Chinese dollar
+   */
+  public void UStoChina(double money) {
+    money *= 6.68;
+    yuan = money;
+  }
+
+  /**
+   * Returns value of yuan
+   */
+  public double getYuan() {
+    return yuan;
+  }
+
+  /**
+   * Converts US dollar to Mexican dollar
+   */
+  public void UStoMexico(double money)  {
+    money *= 18.74;
+    pesos = money;
+  }
+
+  /**
+   * Returns value of pesos
+   */
+  public double getPesos()  {
+    return pesos;
+  }
+
+  /**
+   * Converts US dollar to Swiss Franc
+   */
+  public void UStoSwiss(double money) {
+    money *=  1;
+    franc = money;
+  }
+
+  /**
+   * Returns value of franc
+   */
+  public double getFranc() {
+    return franc;
+  }
+
+  public static void main(String[] args) {
+    new newConverter();
   }
 }
