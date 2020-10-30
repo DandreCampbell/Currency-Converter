@@ -6,9 +6,9 @@ import java.awt.event.*;
 String[] currency = {"Mexican Pesos", "Euros", "Jamaican Dollar", "Japaense", "Chinese Yuan",
                     "Swiss Franc"};
 */
-public class currencyList
+public class currencyList extends JFrame
 {
-  private JFrame window = new JFrame();
+  //private JFrame window = new JFrame();
   private final int WIDTH = 500;
   private final int LENGTH = 500;
   private final Font font = new Font("Times New Roman", Font.BOLD, 14);
@@ -27,17 +27,17 @@ public class currencyList
   }
 
   public void currencyGUI() {
-    window.setTitle("Currency Converter");
-    window.setSize(WIDTH, LENGTH);
+    setTitle("Currency Converter");
+    setSize(WIDTH, LENGTH);
 
     usText.setEditable(true);
     usText.setFont(font);
     foreignText.setEditable(false);
     foreignText.setFont(font);
 
-    window.pack();
-    window.setVisible(true);
-    window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    pack();
+    setVisible(true);
+    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    }
 
   public void theList() {
