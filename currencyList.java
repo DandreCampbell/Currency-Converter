@@ -1,11 +1,3 @@
-/*
-Jam
-Euros
-Pesos
-Yen
-Yuan
-Franc
-*/
 import java.swing.*;
 import java.swing.event.*;
 import java.awt.*;
@@ -25,8 +17,14 @@ public class currencyList
   private JLabel foreignLabel = new JLabel("Exchange Rate: ");
   private JTextField foreignText = new JTextField("", 20);
   private JButton enterButton;
-
+  private JList<String> cList;
+  private JscrollPane scroll;
+  
   public currencyList() {
+    
+  }
+
+  public currencyGUI() {
     window.setTitle("Currency Converter");
     window.setSize(WIDTH, LENGTH);
 
@@ -38,6 +36,25 @@ public class currencyList
     window.pack();
     window.setVisible(true);
     window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+   }
+  
+  public void theList() {
+     String[] currency = {"Mexican Pesos", "Euros", "Jamaican Dollar", "Japaense", "Chinese Yuan",
+                         "Swiss Franc"};
+     DefaultListModel<String> currencyNames = new DefaultListModel<>();
+
+     // Adds List of Different Currency to a JList
+     for(int i = 0; i < currency.length; i++) {
+       currencyNames.addElement(currency[i]);
+     }
+
+     cList = new JList<>(currencyNames);
+     cList.setSelectedIndex(0);
+     cList.setVisible(3);
+     //cList().setBounds();
+
+     //Scroll Feature
+     scroll = new JscrollPane(cList);
    }
 
    public void butt() {
