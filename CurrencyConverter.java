@@ -13,7 +13,6 @@ public class newConverter
   private double franc; // Holds conversion of US to Swiss Franc
 
   public newConverter() {
-    Currency conversion = new Currency();
     String input;
     String con1, con2, con3, con4, con5, con6;
     double num1, num2, num3, num4, num5, num6;
