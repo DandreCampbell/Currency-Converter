@@ -8,7 +8,6 @@ String[] currency = {"Mexican Pesos", "Euros", "Jamaican Dollar", "Japaense", "C
 */
 public class currencyList extends JFrame
 {
-  //private JFrame window = new JFrame();
   private final int WIDTH = 500;
   private final int LENGTH = 500;
   private final Font font = new Font("Times New Roman", Font.BOLD, 14);
@@ -35,6 +34,9 @@ public class currencyList extends JFrame
     foreignText.setEditable(false);
     foreignText.setFont(font);
 
+    theList();
+    butt();
+
     pack();
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,7 +54,7 @@ public class currencyList extends JFrame
 
      cList = new JList<>(currencyNames);
      cList.setSelectedIndex(0);
-     cList.setVisible(3);
+     cList.setVisibleRowCount(3);
      //cList().setBounds();
 
      //Scroll Feature
