@@ -1,5 +1,5 @@
-import java.swing.*;
-import java.swing.event.*;
+import javax.swing.*;
+import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
 /*
@@ -18,13 +18,15 @@ public class currencyList
   private JTextField foreignText = new JTextField("", 20);
   private JButton enterButton;
   private JList<String> cList;
-  private JscrollPane scroll;
-  
+  private JScrollPane scroll;
+
   public currencyList() {
-    
+    currencyGUI();
+    theList();
+    butt();
   }
 
-  public currencyGUI() {
+  public void currencyGUI() {
     window.setTitle("Currency Converter");
     window.setSize(WIDTH, LENGTH);
 
@@ -37,7 +39,7 @@ public class currencyList
     window.setVisible(true);
     window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    }
-  
+
   public void theList() {
      String[] currency = {"Mexican Pesos", "Euros", "Jamaican Dollar", "Japaense", "Chinese Yuan",
                          "Swiss Franc"};
@@ -54,20 +56,22 @@ public class currencyList
      //cList().setBounds();
 
      //Scroll Feature
-     scroll = new JscrollPane(cList);
+     scroll = new JScrollPane(cList);
    }
 
    public void butt() {
      enterButton = new JButton("Enter");
-     enterButton.addActionListener(Enter);
+     //enterButton.addActionListener(Enter);
    }
 
+   /*
    Action Enter = new AbstractAction() {
      public void actionPerformed(ActionEvent e) {
 
        String str = String.format("%.2f", );
      }
    }
+   */
 
    public static void main(String[] args) {
      new currencyList();
