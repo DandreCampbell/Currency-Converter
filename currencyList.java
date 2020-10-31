@@ -20,12 +20,6 @@ public class currencyList extends JFrame
   private JScrollPane scroll;
 
   public currencyList() {
-    currencyGUI();
-    theList();
-    butt();
-  }
-
-  public void currencyGUI() {
     setTitle("Currency Converter");
     setSize(WIDTH, LENGTH);
 
@@ -40,7 +34,7 @@ public class currencyList extends JFrame
     pack();
     setVisible(true);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-   }
+  }
 
   public void theList() {
      String[] currency = {"Mexican Pesos", "Euros", "Jamaican Dollar", "Japaense", "Chinese Yuan",
