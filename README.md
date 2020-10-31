@@ -22,3 +22,7 @@ API help
   * https://cliftonlabs.github.io/json-simple/
 
 JList examples
+  * https://www.tutorialspoint.com/json/json_java_example.htm
+  * https://stackoverflow.com/questions/24236749/package-org-json-does-not-exist-when-importing-org-json-jsonobject
+  * http://www.java2s.com/Code/Jar/j/Downloadjsonsimple111jar.htm
+  * https://cliftonlabs.github.io/json-simple/

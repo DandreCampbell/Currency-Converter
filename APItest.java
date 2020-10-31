@@ -1,22 +1,11 @@
-/*
- * https://www.tutorialspoint.com/json/json_java_example.htm
- * 
- * https://stackoverflow.com/questions/24236749/package-org-json-does-not-exist-when-importing-org-json-jsonobject
- * 
- * http://www.java2s.com/Code/Jar/j/Downloadjsonsimple111jar.htm
- * 
- * https://cliftonlabs.github.io/json-simple/
- */
-
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-//import org.json.simple.JSONElement;
 import org.json.simple.JSONObject;
 
 import com.google.gson.JsonElement;
 
 import java.io.IOException;
-import java.io.InputStreamerReader;
+import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -24,7 +13,7 @@ import java.net.URL;
 
 public class APItest
 {
-  public static HttpURLConnection connection;
+  private static HttpURLConnection connection;
 
   public static void main(String[] args) {
     try {
@@ -38,8 +27,8 @@ public class APItest
       int status = connection.getResponseCode();
       System.out.println(status);
 
-      JSONParser jp = new JsonParser();
-      JSONElement root = jp.parse(new InputStreamerReader((InputStream) request.getContent()));
+      JSONParser jp = new JSONParser();
+      JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
       JSONObject jsonobj = root.getAsJsonObject();
 
       String req_request = jsonobj.get("result").getAsString();
