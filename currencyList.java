@@ -32,6 +32,7 @@ public class currencyList extends JPanel
     frame = new JFrame();
     frame.setTitle("Currency Converter");
     frame.setSize(WIDTH, LENGTH);
+    //frame.getContentPane().add(panel, BorderLayout.CENTER);
     frame.pack();
     frame.setVisible(true);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,7 +56,7 @@ public class currencyList extends JPanel
     panel.add(foreignText);
 
     enterButton = new JButton("Enter");
-    panel.add();
+    panel.add(enterButton);
     //enterButton.addActionListener(Enter);
   }
 
@@ -69,7 +70,7 @@ public class currencyList extends JPanel
   */
 
   public void theList() {
-    DefaultListModel<String> currencyNames = new DefaultListModel<>();
+    DefaultListModel<String> currencyNames = new DefaultListModel<String>();
     String[] currency = {"Mexican Pesos", "Euros", "Jamaican Dollar", "Japaense", "Chinese Yuan",
                          "Swiss Franc"};
 
