@@ -58,6 +58,9 @@ public class currencyList extends JPanel
     enterButton = new JButton("Enter");
     panel.add(enterButton);
     //enterButton.addActionListener(Enter);
+
+
+    
   }
 
   /*
