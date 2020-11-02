@@ -2,46 +2,77 @@ import javax.swing.*;
 import javax.swing.event.*;
 import java.awt.*;
 import java.awt.event.*;
-/*
-String[] currency = {"Mexican Pesos", "Euros", "Jamaican Dollar", "Japaense", "Chinese Yuan",
-                    "Swiss Franc"};
-*/
-public class currencyList extends JFrame
+
+public class currencyList extends JPanel
 {
+  private JPanel panel;
+  private JFrame frame;
+
   private final int WIDTH = 500;
   private final int LENGTH = 500;
+
   private final Font font = new Font("Times New Roman", Font.BOLD, 14);
-  private JLabel usLabel = new JLabel("USD Price: ");
-  private JTextField usText = new JTextField("", 20);
-  private JLabel foreignLabel = new JLabel("Exchange Rate: ");
-  private JTextField foreignText = new JTextField("", 20);
-  private JButton enterButton;
+
+  private JLabel usLabel;
+  private JTextField usText;
+
+  private JLabel foreignLabel;
+  private JTextField foreignText;
+
   private JList<String> cList;
   private JScrollPane scroll;
+  private JButton enterButton;
 
   public currencyList() {
-    setTitle("Currency Converter");
-    setSize(WIDTH, LENGTH);
-
-    usText.setEditable(true);
-    usText.setFont(font);
-    foreignText.setEditable(false);
-    foreignText.setFont(font);
-
-    theList();
-    butt();
-
-    pack();
-    setVisible(true);
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    mainFrame();
+    mainPanel();
   }
 
-  public void theList() {
-     String[] currency = {"Mexican Pesos", "Euros", "Jamaican Dollar", "Japaense", "Chinese Yuan",
-                         "Swiss Franc"};
-     DefaultListModel<String> currencyNames = new DefaultListModel<>();
+  public void mainFrame() {
+    frame = new JFrame();
+    frame.setTitle("Currency Converter");
+    frame.setSize(WIDTH, LENGTH);
+    frame.pack();
+    frame.setVisible(true);
+    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  }
 
-     // Adds List of Different Currency to a JList
+  public void mainPanel() {
+    panel = new JPanel(new GridLayout());
+
+    usLabel = new JLabel("USD Price: ");
+    usText = new JTextField("", 20);
+    usText.setFont(font);
+    usText.setEditable(true);
+    panel.add(usLabel);
+    panel.add(usText);
+
+    foreignLabel = new JLabel("Exchange Rate: ");
+    foreignText = new JTextField("", 20);
+    foreignText.setFont(font);
+    foreignText.setEditable(false);
+    panel.add(foreignLabel);
+    panel.add(foreignText);
+
+    enterButton = new JButton("Enter");
+    panel.add();
+    //enterButton.addActionListener(Enter);
+  }
+
+  /*
+  Action Enter = new AbstractAction() {
+    public void actionPerformed(ActionEvent e) {
+
+      String str = String.format("%.2f", );
+    }
+  }
+  */
+
+  public void theList() {
+    DefaultListModel<String> currencyNames = new DefaultListModel<>();
+    String[] currency = {"Mexican Pesos", "Euros", "Jamaican Dollar", "Japaense", "Chinese Yuan",
+                         "Swiss Franc"};
+
      for(int i = 0; i < currency.length; i++) {
        currencyNames.addElement(currency[i]);
      }
@@ -54,20 +85,6 @@ public class currencyList extends JFrame
      //Scroll Feature
      scroll = new JScrollPane(cList);
    }
-
-   public void butt() {
-     enterButton = new JButton("Enter");
-     //enterButton.addActionListener(Enter);
-   }
-
-   /*
-   Action Enter = new AbstractAction() {
-     public void actionPerformed(ActionEvent e) {
-
-       String str = String.format("%.2f", );
-     }
-   }
-   */
 
    public static void main(String[] args) {
      new currencyList();
