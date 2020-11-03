@@ -1,24 +1,67 @@
-import java.util.Scanner;
-import java.util.Date;
+import java.util.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class CurrencyConverter
 {
+
   public CurrencyConverter() {
 
+    SimpleDateFormat df = new SimpleDateFormat();
     Scanner sc = new Scanner(System.in);
-    String input;
     String[] currency = {"Euros (EUR)", "Japaense Yen (JPY)", "British Pound (GBP)",
                       "Australian Dollar (AUD)", "Canadian Dollar (CAD)", "Swiss Franc (CHF)"};
+    double conversion = 0;
 
-    System.out.println("Select One Of The Following Major Currencies: ");
+    System.out.println("\nSelect One Of The Following Major Currencies To Convert To From USD"
+                      + ": \n(Choose the number)\n");
 
     for (int i = 0; i < currency.length; i++) {
-      System.out.printf("%.2f %s", i + 1, currency[i]);
+      System.out.printf("%d %s \n", i + 1, currency[i]);
     }
+
+    System.out.println("\nEnter The Number: \n");
+    double input = sc.nextDouble();
+
+    if(input == 1) {
+      System.out.println("USD to Euros: \n");
+    }
+    else if(input == 2) {
+      System.out.println("USD to Japanese Yen: \n");
+    }
+    else if(input == 3) {
+      System.out.println("USD to British Pound: \n");
+    }
+    else if(input == 4) {
+      System.out.println("USD to to Austrailian Dollar: \n");
+    }
+    else if(input == 5) {
+      System.out.println("USD to Canadian Dollar: \n");
+    }
+    else if(input == 6) {
+      System.out.println("USD to to Swiss Franc:");
+    }
+    else {
+      System.out.println("\nNot a valid Number. Rerun Program...");
+      System.exit(0);
+    }
+
+    System.out.println("\nEnter The Amount: \n");
+    double amount = sc.nextDouble();
+
+    System.out.printf("%.2f", conversion);
+    /**
+
+    */
+
   }
-  
+
+  public void conversionAPI(double finalConversion) {
+    /**
+    Code for connecting to API and making final Calculations
+    */
+  }
+
   public static void main(String[] args) {
     new CurrencyConverter();
   }
