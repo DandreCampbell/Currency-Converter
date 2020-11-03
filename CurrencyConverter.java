@@ -9,15 +9,16 @@ public class CurrencyConverter
 
     SimpleDateFormat df = new SimpleDateFormat();
     Scanner sc = new Scanner(System.in);
-    String[] currency = {"Euros (EUR)", "Japaense Yen (JPY)", "British Pound (GBP)",
-                      "Australian Dollar (AUD)", "Canadian Dollar (CAD)", "Swiss Franc (CHF)"};
+    String[] currency = {"Euros", "Japaense Yen", "British Pound",
+                      "Australian Dollar", "Canadian Dollar", "Swiss Franc"};
+    String[] symbol = {"EUR", "JPY", "GBP", "AUD", "CAD", "CHF"};
     double conversion = 0;
 
     System.out.println("\nSelect One Of The Following Major Currencies To Convert To From USD"
                       + ": \n(Choose the number)\n");
 
     for (int i = 0; i < currency.length; i++) {
-      System.out.printf("%d %s \n", i + 1, currency[i]);
+      System.out.printf("%d %s (%s)\n", i + 1, currency[i], symbol[i]);
     }
 
     System.out.println("\nEnter The Number: \n");

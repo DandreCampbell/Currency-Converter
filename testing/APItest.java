@@ -11,7 +11,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class APItest
+// https://www.exchangerate-api.com/docs/java-currency-api
+
+public class apiTest
 {
   private static HttpURLConnection connection;
 
