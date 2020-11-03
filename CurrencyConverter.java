@@ -42,7 +42,7 @@ public class CurrencyConverter
       System.out.println("USD to to Swiss Franc:");
     }
     else {
-      System.out.println("\nNot a valid Number. Rerun Program...");
+      System.out.println("\nNot a valid input. Rerun Program...");
       System.exit(0);
     }
 
