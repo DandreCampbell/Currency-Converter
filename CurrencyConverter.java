@@ -21,46 +21,51 @@ public class CurrencyConverter
       System.out.printf("%d %s (%s)\n", i + 1, currency[i], symbol[i]);
     }
 
-    System.out.println("\nEnter The Number: \n");
+    System.out.println("\nEnter The Number:");
     double input = sc.nextDouble();
 
     if(input == 1) {
-      System.out.println("USD to Euros: \n");
+      System.out.println("\nUSD to Euros");
     }
     else if(input == 2) {
-      System.out.println("USD to Japanese Yen: \n");
+      System.out.println("\nUSD to Japanese Yen");
     }
     else if(input == 3) {
-      System.out.println("USD to British Pound: \n");
+      System.out.println("\nUSD to British Pound");
     }
     else if(input == 4) {
-      System.out.println("USD to to Austrailian Dollar: \n");
+      System.out.println("\nUSD to to Austrailian Dollar");
     }
     else if(input == 5) {
-      System.out.println("USD to Canadian Dollar: \n");
+      System.out.println("\nUSD to Canadian Dollar");
     }
     else if(input == 6) {
-      System.out.println("USD to to Swiss Franc:");
+      System.out.println("\nUSD to to Swiss Franc");
     }
     else {
       System.out.println("\nNot a valid input. Rerun Program...");
       System.exit(0);
     }
 
-    System.out.println("\nEnter The Amount: \n");
+    System.out.println("Enter The Amount:");
     double amount = sc.nextDouble();
 
-    System.out.printf("%.2f", conversion);
     /**
 
     */
-
+    System.out.println("\nAmount in (selected currency):");
+    System.out.printf("%.2f", conversionAPI(amount));
+    /**
+    
+    */
   }
 
-  public void conversionAPI(double finalConversion) {
+  public double conversionAPI(double userAmount) {
+     double finalAmount = 0;
     /**
     Code for connecting to API and making final Calculations
     */
+    return finalAmount;
   }
 
   public static void main(String[] args) {
