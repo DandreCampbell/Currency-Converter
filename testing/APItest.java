@@ -12,6 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 // https://www.exchangerate-api.com/docs/java-currency-api
+// https://api.exchangeratesapi.io/latest?base=USD
 
 public class apiTest
 {
@@ -30,7 +31,7 @@ public class apiTest
       System.out.println(status);
 
       JSONParser jp = new JSONParser();
-      JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent()));
+      JsonElement root = jp.parse(new InputStreamReader((InputStream) connection.getContent()));
       JSONObject jsonobj = root.getAsJsonObject();
 
       String req_request = jsonobj.get("result").getAsString();
