@@ -2,6 +2,19 @@ import java.util.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.ParseException;
+import org.json.simple.JSONObject;
+
+import com.google.gson.JsonElement;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.BufferedReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 public class CurrencyConverter
 {
 
@@ -54,14 +67,17 @@ public class CurrencyConverter
 
     */
     System.out.println("\nAmount in (selected currency):");
-    System.out.printf("%.2f\n", conversionAPI(amount));
+    //System.out.printf("%.2f\n", conversionAPI(amount));
     /**
 
     */
   }
 
-  public double conversionAPI(double userAmount) {
-     double finalAmount = 0;
+  public double conversionAPI(String symbol, double userAmount) {
+    //https://v6.exchangerate-api.com/v6/2b1becc2b080c6a17e5854fd//pair/USD/EUR
+    URL apiURL;
+    double finalAmount = 0;
+    symbol = "";
     /**
     Code for connecting to API and making final Calculations
     */
