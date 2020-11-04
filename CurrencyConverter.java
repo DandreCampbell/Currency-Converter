@@ -54,9 +54,9 @@ public class CurrencyConverter
 
     */
     System.out.println("\nAmount in (selected currency):");
-    System.out.printf("%.2f", conversionAPI(amount));
+    System.out.printf("%.2f\n", conversionAPI(amount));
     /**
-    
+
     */
   }
 
