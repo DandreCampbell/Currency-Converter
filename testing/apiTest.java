@@ -17,7 +17,8 @@ public class apiTest
 
   public static void main(String[] args) {
     try {
-      URL url = new URL("https://v6.exchangerate-api.com/v6/2b1becc2b080c6a17e5854fd/latest/USD");
+      //URL url = new URL("https://v6.exchangerate-api.com/v6/2b1becc2b080c6a17e5854fd/latest/USD");
+      URL url = new URL("https://api.exchangeratesapi.io/latest?base=USD");
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
       connection.setRequestMethod("GET");
