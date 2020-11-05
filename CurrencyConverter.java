@@ -1,9 +1,9 @@
 import java.util.*;
-import java.text.ParseException;
+//import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-//import org.json.simple.parser.JSONParser;
-//import org.json.simple.parser.ParseException;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.json.simple.JSONObject;
 
 //import com.google.gson.JsonElement;
@@ -44,7 +44,7 @@ public class CurrencyConverter
     if(input == 1) {
       System.out.println("\nConverting USD to Euros...\n"
                         + "Amount in Euros: ");
-                        //System.out.printf("%.2f\n", conversionAPI(amount));
+      //System.out.printf("%.2f\n", conversionAPI(amount));
     }
     else if(input == 2) {
       System.out.println("\nConverting USD to Japanese Yen...\n"
@@ -72,7 +72,7 @@ public class CurrencyConverter
     }
   }
 
-  public double conversionAPI(String symbol, double userAmount) throws IOException, MalformedURLException {
+  public double conversionAPI(String symbol, double userAmount) throws IOException, MalformedURLException, ParseException {
     double finalAmount = 0;
     symbol = "";
     int status;
@@ -100,6 +100,8 @@ public class CurrencyConverter
     JSONObject object = new JSONObject(sbString);
     System.out.println(object.getJsonString("AED")); //AED
     */
+    JSONParser parser = new JSONParser();
+    JSONObject object = (JSONObject) parser.parse(sb.toString());
 
     connection.disconnect();
 

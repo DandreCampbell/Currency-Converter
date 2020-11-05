@@ -1,5 +1,5 @@
 import org.json.simple.JSONObject;
-
+import org.json.simple.parser.JSONParser;
 //import com.google.gson.JsonElement;
 
 import java.io.IOException;
@@ -39,10 +39,12 @@ public class apiTest
       String sbString = sb.toString();
       System.out.println(sbString);
 
-      /**
-      JSONObject object = new JSONObject(sbString);
-      System.out.println(object.getJsonString("AED")); //AED
-      */
+      JSONParser parser = new JSONParser();
+      JSONObject object = (JSONObject) parser.parse(sb.toString());
+      //JSONObject object = new JSONObject("rate").getJSONObject("EUR");
+      //System.out.println(object.getJsonNumber("AED")); //AED
+      System.out.println(object.getJsonString("base"));
+
       connection.disconnect();
     }
     catch (MalformedURLException e) {
