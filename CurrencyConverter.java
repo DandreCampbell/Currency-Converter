@@ -2,11 +2,11 @@ import java.util.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import org.json.simple.parser.JSONParser;
+//import org.json.simple.parser.JSONParser;
 //import org.json.simple.parser.ParseException;
 import org.json.simple.JSONObject;
 
-import com.google.gson.JsonElement;
+//import com.google.gson.JsonElement;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -74,7 +74,6 @@ public class CurrencyConverter
   }
 
   public double conversionAPI(String symbol, double userAmount) {
-    //https://v6.exchangerate-api.com/v6/2b1becc2b080c6a17e5854fd//pair/USD/EUR
     //URL apiURL;
     //HttpURLConnection connection = (HttpURLConnection) apiURL.openConnection();
     double finalAmount = 0;
@@ -86,13 +85,42 @@ public class CurrencyConverter
   }
 
   public static void connectionTest() {
-    URL apiURL;
-    HttpURLConnection connection = (HttpURLConnection) apiURL.openConnection();
+    try {
+      // https://v6.exchangerate-api.com/v6/2b1becc2b080c6a17e5854fd/latest/USD
+      URL apiURL = new URL("https://api.exchangeratesapi.io/latest?base=USD");
+      HttpURLConnection connection = (HttpURLConnection) apiURL.openConnection();
 
-    connection.setRequestMethod("");
-    connection.setConnectTimeout(5000);
-    connection.setReadTimeout(5000);
+      connection.setRequestMethod("GET");
+      connection.setConnectTimeout(5000);
+      connection.setReadTimeout(5000);
 
+      int status = connection.getResponseCode();
+      System.out.println(status);
+
+      BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+      String inputLine;
+      StringBuffer sb = new StringBuffer();
+
+      while ((inputLine = br.readLine()) != null) {
+        sb.append(inputLine);
+      }
+      br.close();
+
+      String sbString = sb.toString();
+      System.out.println(sbString);
+
+      /**
+      JSONObject object = new JSONObject(sbString);
+      System.out.println(object.getJsonString("AED")); //AED
+      */
+      connection.disconnect();
+    }
+    catch (MalformedURLException e) {
+      e.printStackTrace();
+    }
+    catch (IOException e) {
+      e.printStackTrace();
+    }
   }
 
   public static void main(String[] args) {

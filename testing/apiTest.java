@@ -1,8 +1,6 @@
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 import org.json.simple.JSONObject;
 
-import com.google.gson.JsonElement;
+//import com.google.gson.JsonElement;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -16,12 +14,11 @@ import java.net.URL;
 
 public class apiTest
 {
-  private static HttpURLConnection connection;
 
   public static void main(String[] args) {
     try {
       URL url = new URL("https://v6.exchangerate-api.com/v6/2b1becc2b080c6a17e5854fd/latest/USD");
-      connection = (HttpURLConnection) url.openConnection();
+      HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
       connection.setRequestMethod("GET");
       connection.setConnectTimeout(5000);
@@ -30,20 +27,28 @@ public class apiTest
       int status = connection.getResponseCode();
       System.out.println(status);
 
-      JSONParser parser = new JSONParser();
-      JsonElement element = parser.parse(new InputStreamReader((InputStream) connection.getContent()));
-      JSONObject object = element.getAsJsonObject();
+      BufferedReader br = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+      String inputLine;
+      StringBuffer sb = new StringBuffer();
+      while ((inputLine = br.readLine()) != null) {
+        sb.append(inputLine);
+      }
+      br.close();
 
-      String request = object.get("result").getAsString();
+      String sbString = sb.toString();
+      System.out.println(sbString);
+
+      /**
+      JSONObject object = new JSONObject(sbString);
+      System.out.println(object.getJsonString("AED")); //AED
+      */
+      connection.disconnect();
     }
     catch (MalformedURLException e) {
       e.printStackTrace();
     }
     catch (IOException e) {
       e.printStackTrace();
-    }
-    finally {
-      connection.disconnect();
     }
   }
 
