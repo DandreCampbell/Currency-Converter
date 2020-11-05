@@ -30,11 +30,11 @@ public class apiTest
       int status = connection.getResponseCode();
       System.out.println(status);
 
-      JSONParser jp = new JSONParser();
-      JsonElement root = jp.parse(new InputStreamReader((InputStream) connection.getContent()));
-      JSONObject jsonobj = root.getAsJsonObject();
+      JSONParser parser = new JSONParser();
+      JsonElement element = parser.parse(new InputStreamReader((InputStream) connection.getContent()));
+      JSONObject object = element.getAsJsonObject();
 
-      String req_request = jsonobj.get("result").getAsString();
+      String request = object.get("result").getAsString();
     }
     catch (MalformedURLException e) {
       e.printStackTrace();

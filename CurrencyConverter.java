@@ -75,16 +75,28 @@ public class CurrencyConverter
 
   public double conversionAPI(String symbol, double userAmount) {
     //https://v6.exchangerate-api.com/v6/2b1becc2b080c6a17e5854fd//pair/USD/EUR
-    URL apiURL;
+    //URL apiURL;
+    //HttpURLConnection connection = (HttpURLConnection) apiURL.openConnection();
     double finalAmount = 0;
     symbol = "";
-    /**
-    Code for connecting to API and making final Calculations
-    */
+
+    //Code for connecting to API and making final Calculations
+
     return finalAmount;
   }
 
+  public static void connectionTest() {
+    URL apiURL;
+    HttpURLConnection connection = (HttpURLConnection) apiURL.openConnection();
+
+    connection.setRequestMethod("");
+    connection.setConnectTimeout(5000);
+    connection.setReadTimeout(5000);
+
+  }
+
   public static void main(String[] args) {
-    new CurrencyConverter();
+    //new CurrencyConverter();
+    connectionTest();
   }
 }
