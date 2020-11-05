@@ -27,6 +27,6 @@ JList examples
   * https://cliftonlabs.github.io/json-simple/
 
 To add:
-  Mexican Pesos (MXN)
-  Chinese Yuan (CNY)
-  Jamaican Dollar (JMD)
+  * Mexican Pesos (MXN)
+  * Chinese Yuan (CNY)
+  * Jamaican Dollar (JMD)
