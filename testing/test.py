@@ -13,6 +13,6 @@ def test():
     symbolLength = len(symbol)
 
     for x in range(currencyLength):
-        print((x + 1) + currency[x] + symbol[x])
+        print(str(x + 1) + " " + str(currency[x]) + " - " + str(symbol[x]))
 
 test()
