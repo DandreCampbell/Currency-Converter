@@ -14,3 +14,7 @@ such as:
 # Requirements
   * "json" library
   * "requests" library
+
+# Downloading Libraries
+  * pip install json
+  * pip install requests
