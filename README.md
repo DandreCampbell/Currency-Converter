@@ -12,6 +12,5 @@ such as:
 To add:
   * Mexican Pesos (MXN)
   * Chinese Yuan (CNY)
-  * Jamaican Dollar (JMD)
 
 Must have Python json and requests library installed

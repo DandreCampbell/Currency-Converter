@@ -53,27 +53,24 @@ def currencyConverter():
 
     else:
         sys.exit("\nNot a valid number. Rerun Program...");
-      # print("\nNot a valid input. Rerun Program...")
 
 def conversionAPI(currency_symbol):
     url = "https://api.exchangeratesapi.io/latest?base=USD"
     response = requests.get(url)
-    #data = response.json()
-    #print(data)
-
-    #conversion_rates
-    #rate = response.json()["rates"]
-    #jprint(rate)
-
     symbol_rate = response.json()["rates"][currency_symbol]
 
     return(symbol_rate)
 
 # Converts Json Object to string
 def jprint(obj):
-    # converts Json Object to string
     text = json.dumps(obj, sort_keys=True, indent=4)
     print(text)
 
+def currencyList():
+    url = "https://api.exchangeratesapi.io/latest?base=USD"
+    response = requests.get(url)
+    rate = response.json()["rates"]
+    jprint(rate)
 #
-currencyConverter()
+#currencyConverter()
+currencyList()
