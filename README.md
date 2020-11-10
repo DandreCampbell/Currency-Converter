@@ -12,7 +12,6 @@ such as:
   * Chinese Yuan (CNY)
 
 # Requirements
-  * "json" library
   * "requests" library
 
 # Downloading Libraries
